@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import Header from "./Components/Header";
+import Header from "./Components/counters";
 ReactDOM.render(
   <React.StrictMode>
     <Header />
