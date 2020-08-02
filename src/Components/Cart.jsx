@@ -7,10 +7,10 @@ class Cart extends Component {
     this.props.cartItems.forEach((elem) => {
       total += elem.price;
       itemsToRender.push(
-        <li>
+        <li className="m-2">
           <Item name={elem.name} price={elem.price}></Item>
           <button
-            onClick={this.props.RaiseRemoveItem}
+            onClick={() => this.props.RaiseRemoveItem(elem.id)}
             className="btn btn-warning "
           >
             Remove
@@ -20,15 +20,19 @@ class Cart extends Component {
     });
 
     return (
-      <div className="col-6 bg-secondary text-light rounded p-2 shadow">
-        <h4>Cart</h4>
-        <ul>{itemsToRender}</ul>
-        <button
-          onClick={this.props.RaiseClearCart}
-          className="btn btn-danger m-2"
-        >
-          Clear cart
-        </button>
+      <div className="col-6 ">
+        <div className="bg-secondary text-light rounded p-2 shadow">
+          <h4>Cart</h4>
+          <ul>{itemsToRender}</ul>
+          <span>Total items:{total.toFixed(2)}</span>
+          <br />
+          <button
+            onClick={this.props.RaiseClearCart}
+            className="btn btn-danger m-2"
+          >
+            Clear cart
+          </button>
+        </div>
       </div>
     );
   }

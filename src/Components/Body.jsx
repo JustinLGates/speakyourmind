@@ -4,17 +4,24 @@ import Store from "./store";
 class Body extends Component {
   state = {
     items: [
-      { name: "Bread", price: 5.0 },
-      { name: "Milk", price: 2.78 },
-      { name: "Eggs", price: 1.78 },
+      { id: 0, name: "Bread", price: 5.0 },
+      { id: 1, name: "Milk", price: 2.78 },
+      { id: 2, name: "Eggs", price: 1.78 },
     ],
-    cart: [{ name: "test", price: 15 }],
+    cart: [{ id: 3, name: "test", price: 15 }],
   };
-  HandleAddToCart = () => {
-    console.log("add to cart:");
+  HandleAddToCart = (itemId) => {
+    console.log("add to cart: " + itemId);
+
+    let cart = this.state.cart;
+    let itemToAdd = this.state.items.find((elem) => elem.id == itemId);
+    cart.push(itemToAdd);
+    this.setState({ cart });
   };
-  HandleRemoveItem = () => {
-    console.log("remove item");
+  HandleRemoveItem = (id) => {
+    let cart = this.state.cart;
+    cart = cart.filter((elem) => elem.id != id);
+    this.setState({ cart });
   };
   HandleClearCart = () => {
     console.log("clearing cart");
@@ -22,13 +29,13 @@ class Body extends Component {
   };
   render() {
     return (
-      <div className="container-fluid bg-light flex-grow-1">
+      <div className="container-fluid bg-dark flex-grow-1">
         <div className="row">
           <div className="col-12 bg-primary">
             <p className="m-0 p-1">Here is the body section</p>
           </div>
         </div>
-        <div className="row">
+        <div className="row p-3 m-2">
           <Store
             RaiseAddToCart={this.HandleAddToCart}
             items={this.state.items}
@@ -36,7 +43,7 @@ class Body extends Component {
           <Cart
             cartItems={this.state.cart}
             RaiseClearCart={() => this.HandleClearCart()}
-            RaiseRemoveItem={() => this.HandleRemoveItem()}
+            RaiseRemoveItem={this.HandleRemoveItem}
           />
         </div>
       </div>

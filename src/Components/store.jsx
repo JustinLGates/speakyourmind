@@ -3,12 +3,13 @@ class Store extends Component {
   state = {};
   render() {
     let itemsToRender = [];
+
     this.props.items.forEach((elem) => {
       itemsToRender.push(
         <li>
           {elem.name} {elem.price}
           <button
-            onClick={this.props.RaiseAddToCart}
+            onClick={() => this.props.RaiseAddToCart(elem.id)}
             className="btn btn-primary m-2"
           >
             Add
@@ -17,10 +18,12 @@ class Store extends Component {
       );
     });
     return (
-      <div className="col-6 bg-secondary text-light p-2 shadow rounded">
-        <h4>Store</h4>
+      <div className="col-6 ">
+        <div className="bg-secondary text-light rounded p-2 shadow">
+          <h4>Store</h4>
 
-        <ul>{itemsToRender}</ul>
+          <ul>{itemsToRender}</ul>
+        </div>
       </div>
     );
   }
