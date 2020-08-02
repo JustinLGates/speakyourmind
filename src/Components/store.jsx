@@ -19,7 +19,7 @@ class Store extends Component {
     });
     return (
       <div className="col-6 ">
-        <div className="bg-secondary text-light rounded p-2 shadow">
+        <div className="bg-dark text-light rounded p-2 shadow">
           <h4>Store</h4>
 
           <ul>{itemsToRender}</ul>

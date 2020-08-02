@@ -21,7 +21,7 @@ class Cart extends Component {
 
     return (
       <div className="col-6 ">
-        <div className="bg-secondary text-light rounded p-2 shadow">
+        <div className="bg-dark text-light rounded p-2 shadow">
           <h4>Cart</h4>
           <ul>{itemsToRender}</ul>
           <span>Total items:{total.toFixed(2)}</span>

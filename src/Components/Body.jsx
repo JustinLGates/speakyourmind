@@ -29,11 +29,9 @@ class Body extends Component {
   };
   render() {
     return (
-      <div className="container-fluid bg-dark flex-grow-1">
+      <div className="container-fluid bg-secondary flex-grow-1">
         <div className="row">
-          <div className="col-12 bg-primary">
-            <p className="m-0 p-1">Here is the body section</p>
-          </div>
+          <div className="col-12 bg-light"></div>
         </div>
         <div className="row p-3 m-2">
           <Store
