@@ -6,7 +6,7 @@ class Footer extends Component {
       <div className="container-fluid bg-dark text-light">
         <div className="row">
           <div className="col-12">
-            <p className="m-0 p-1">Footer</p>
+            <p className="m-0 p-5">Footer</p>
           </div>
         </div>
       </div>
