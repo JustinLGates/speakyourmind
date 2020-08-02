@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-class Header extends Component {
+
+class Body extends Component {
   state = {};
   render() {
     return (
-      <div className="container-fluid bg-dark text-light">
+      <div className="container-fluid bg-light flex-grow-1">
         <div className="row">
           <div className="col-12">
-            <h1>Header</h1>
+            <p>Body</p>
           </div>
         </div>
       </div>
@@ -14,4 +15,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Body;
