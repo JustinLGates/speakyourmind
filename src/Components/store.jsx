@@ -1,29 +1,17 @@
 import React, { Component } from "react";
+import api from "../Axios";
 class Store extends Component {
+  componentDidMount() {
+    api.get(`test`).then((res) => {
+      const data = res.data;
+      this.setState({ data });
+    });
+  }
   state = {};
   render() {
-    let itemsToRender = [];
-
-    this.props.items.forEach((elem) => {
-      itemsToRender.push(
-        <li>
-          {elem.name} {elem.price}
-          <button
-            onClick={() => this.props.RaiseAddToCart(elem.id)}
-            className="btn btn-primary m-2"
-          >
-            Add
-          </button>
-        </li>
-      );
-    });
     return (
-      <div className="col-6 ">
-        <div className="bg-dark text-light rounded p-2 shadow">
-          <h4>Store</h4>
-
-          <ul>{itemsToRender}</ul>
-        </div>
+      <div>
+        <p>hi</p>
       </div>
     );
   }
